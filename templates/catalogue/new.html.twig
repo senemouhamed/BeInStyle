@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Commande{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <h1 text-align:center position:top>Ajouter une Commande</h1>
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Enrégistrer') }}</button>
+   {# <a class="btn btn-primary " " href="{{ path('catalogue') }}"> Voir la liste</a> #}
+    {{ form_end(form) }}
+
+    
+{% endblock %}

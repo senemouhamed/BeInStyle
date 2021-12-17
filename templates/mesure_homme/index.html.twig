@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureHomme index{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+             <tr><th><h1 style="text-align:center">Mesures</h1></th></tr>
+            <tr>
+                <th>Id</th>
+                <th>Epaul</th>
+                <th>Mass_courte</th>
+                <th>Mass_long</th>
+                <th>Mass_trois_quart</th>
+                <th>Tourde_mass</th>
+                <th>Poigner</th>
+                <th>Coup</th>
+                <th>Poitrine</th>
+                <th>Longueur_boub</th>
+                <th>Demi_saison</th>
+                <th>Trois_quart</th>
+                <th>Ceinture</th>
+                <th>Longueur_pantalon</th>
+                <th>Cuisse</th>
+                <th>Anche</th>
+                <th>action 1</th>
+                <th>action 2</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mesure_homme in mesure_hommes %}
+            <tr>
+                <td>{{ mesure_homme.id }}</td>
+                <td>{{ mesure_homme.epaul }}</td>
+                <td>{{ mesure_homme.massCourte }}</td>
+                <td>{{ mesure_homme.massLong }}</td>
+                <td>{{ mesure_homme.massTroisQuart }}</td>
+                <td>{{ mesure_homme.tourdeMass }}</td>
+                <td>{{ mesure_homme.poigner }}</td>
+                <td>{{ mesure_homme.coup }}</td>
+                <td>{{ mesure_homme.poitrine }}</td>
+                <td>{{ mesure_homme.longueurBoub }}</td>
+                <td>{{ mesure_homme.demiSaison }}</td>
+                <td>{{ mesure_homme.troisQuart }}</td>
+                <td>{{ mesure_homme.ceinture }}</td>
+                <td>{{ mesure_homme.longueurPantalon }}</td>
+                <td>{{ mesure_homme.cuisse }}</td>
+                <td>{{ mesure_homme.anche }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('mesure_homme_show', {'id': mesure_homme.id}) }}">Détail</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('mesure_homme_edit', {'id': mesure_homme.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">Aucun mesure trouver</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr><th><a class="btn btn-primary"  href="{{ path('mesure_homme_new') }}">Ajouter mesure</a></th></tr>
+    </table>
+{% endblock %}

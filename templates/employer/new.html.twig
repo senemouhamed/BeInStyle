@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau Employer{% endblock %}
+
+{% block body %}
+{{ form_start(form) }}
+<h1 text-align:center position:top>Ajouter Employé(e)</h1>
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Enrégistrer') }}</button>
+{{ form_end(form) }}
+{% endblock %}

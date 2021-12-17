@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+          <tr><th><h1 style="text-align:center">Sugnu Commandes<h1></th></tr>
+            <tr>
+                <th>Id</th>
+                <th>Modele</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Date de récupération</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for catalogue in catalogues %}
+            <tr>
+                <td>{{ catalogue.id }}</td>
+                <td>{{ catalogue.modele }}</td>
+                <td>{{ catalogue.quantity }}</td>
+                <td>{{ catalogue.prix }}</td>
+                <td>{{ catalogue.description }}</td>
+                <td>{{ catalogue.Lastdate|date('Y-m-d')}}</td>
+           
+                <td>
+                    <a href="{{ path('modele_show', {'id': catalogue.id}) }}" class="btn btn-primary">show</a>
+                      {# <a href="{{ path('modele_edit', {'id': modele.id}) }}" class="btn btn-primary">edit</a> #}
+                </td>
+               
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Pas de Commande</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+        <tr><th><a href="{{ path('catalogue_new') }}" class="btn btn-primary">Ajouter une Commande</a></th><th></th><th></th><th></th><th></th><th></th></tr>
+    </table>
+
+    
+{% endblock %}

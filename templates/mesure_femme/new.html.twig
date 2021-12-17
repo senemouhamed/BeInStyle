@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New MesureFemme{% endblock %}
+
+{% block body %}
+   {{ form_start(form) }}
+   <div><h1>Ajouter des Mesures</h1> 
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button_label|default('Enrégistrer') }}</button>
+{{ form_end(form) }}
+{% endblock %}

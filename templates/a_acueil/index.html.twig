@@ -1,0 +1,32 @@
+{% extends 'base3.html.twig' %}
+{% block stylesheets %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{{ asset("CSS/style.css")}}">
+<link rel="stylesheet" type="text/css" href="{{ asset("CSS/am.css")}}">
+{% endblock %}
+{% block body %}
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <div class="fakeimg" style="height:500px; width:900px"><img class="im" src="{{ asset("img/logo.jpeg") }}"></div>
+  </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h3>Mes Employés</h3>
+      <div class="bouton"><a class="text1" href="{{path('employer_index')}}">Employer</a></div>
+    </div>
+    <div class="card">
+      <h3>Modéles</h3>
+      <div class="bouton"><a class="text1" href="{{path('sa_modele_index')}}">Liste des modéles</a></div>
+    </div>
+    <div class="card">
+      <h3>Ajouter un Modéles</h3>
+      <div class="bouton"><a class="text1" href="{{path('sa_modele_new')}}">Ajouter</a></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset("JS/style.js") }}"></script>
+{% endblock %}

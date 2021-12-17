@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modele{% endblock %}
+
+{% block body %}
+<div>
+  
+    
+    <h1><h1>
+</div>
+<div class="card w-25 align-self-center">
+   <img src="{{ asset('img/' ~ catalogue.modele) }}" >
+   <div class="card-body">
+    <h5 class="card-title">{{ catalogue.description }}</h5>
+    <div class="card-title text-primary" style="...">
+    Prix : {{ catalogue.prix  | number_format(0, ',' ,' ')}} fcfa
+     </div>
+    <p>Quantité commander :{{ catalogue.quantity }}</p>
+   <a class="btn btn-primary" href="{{ path('modele_edit', {'id': catalogue.id}) }}">Modifier</a>
+   {{ include('catalogue/delete.html.twig') }}
+   </div>
+</div>
+{% endblock %}

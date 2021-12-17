@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureFemme index{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+        <tr><th><h1>Mesures Femmes</h1></th></tr>
+            <tr>
+                <th>Client n°</th>
+                <th>Epaule</th>
+                <th>Mass_courte</th>
+                <th>Mass_trois_quart</th>
+                <th>Mass_longue</th>
+                <th>Tour_de_masse</th>
+                <th>Poitrine</th>
+                <th>Taille</th>
+                <th>Ceinture</th>
+                <th>Anche</th>
+                <th>Longueur_blouse</th>
+                <th>Longueur_boubou</th>
+                <th>Longueur_jupe</th>
+                <th>Longueur_pagne</th>
+                <th>Longueur_robr_trois_quart</th>
+                <th>Longueur_robe_longue</th>
+                <th>Jupe_courte</th>
+                <th>Jupe_trois_quart</th>
+                <th>Jupe_longue</th>
+                <th>action1</th>
+                <th>action2</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mesure_femme in mesure_femmes %}
+            <tr>
+                <td>{{ mesure_femme.id }}</td>
+                <td>{{ mesure_femme.epaule }}</td>
+                <td>{{ mesure_femme.massCourte }}</td>
+                <td>{{ mesure_femme.massTroisQuart }}</td>
+                <td>{{ mesure_femme.massLongue }}</td>
+                <td>{{ mesure_femme.tourDeMasse }}</td>
+                <td>{{ mesure_femme.poitrine }}</td>
+                <td>{{ mesure_femme.taille }}</td>
+                <td>{{ mesure_femme.ceinture }}</td>
+                <td>{{ mesure_femme.anche }}</td>
+                <td>{{ mesure_femme.longueurBlouse }}</td>
+                <td>{{ mesure_femme.longueurBoubou }}</td>
+                <td>{{ mesure_femme.longueurJupe }}</td>
+                <td>{{ mesure_femme.longueurPagne }}</td>
+                <td>{{ mesure_femme.longueurRobrTroisQuart }}</td>
+                <td>{{ mesure_femme.longueurRobeLongue }}</td>
+                <td>{{ mesure_femme.jupeCourte }}</td>
+                <td>{{ mesure_femme.jupeTroisQuart }}</td>
+                <td>{{ mesure_femme.jupeLongue }}</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('mesure_femme_show', {'id': mesure_femme.id}) }}">show</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('mesure_femme_edit', {'id': mesure_femme.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="20">Aucun mesure touver</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr><th> <a class="btn btn-primary" href="{{ path('mesure_femme_new') }}">Ajouter</a></th></tr>
+    </table>
+{% endblock %}

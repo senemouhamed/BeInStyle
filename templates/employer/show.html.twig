@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Employer{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <tbody>
+         <tr><th><h1>Employé(e) n°{{ employer.id }}</h1></th>
+         <td></td></tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ employer.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ employer.Telephone }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ employer.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Salaire</th>
+                <td>{{ employer.salaire|number_format }} Francs</td>
+            </tr>
+            <tr>
+                <th>Avance</th>
+                <td>{{ employer.avance|number_format}} Francs</td>
+            </tr>
+            <tr>
+                <th>Reste</th>
+                <td>{{ employer.reste|number_format }} Francs</td>
+            </tr>
+        </tbody>
+        <tr>
+       <th><a class="btn btn-primary" href="{{ path('employer_edit', {'id': employer.id}) }}">Modifier</a></th>
+          <th> {{ include('employer/_delete_form.html.twig') }}</th>
+        </tr>
+    </table>
+{% endblock %}

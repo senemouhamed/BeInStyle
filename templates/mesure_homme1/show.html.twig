@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureHomme1{% endblock %}
+
+{% block body %}
+    <h1>MesureHomme1</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mesure_homme1.id }}</td>
+            </tr>
+            <tr>
+                <th>E</th>
+                <td>{{ mesure_homme1.E }}</td>
+            </tr>
+            <tr>
+                <th>MC</th>
+                <td>{{ mesure_homme1.MC }}</td>
+            </tr>
+            <tr>
+                <th>ML</th>
+                <td>{{ mesure_homme1.ML }}</td>
+            </tr>
+            <tr>
+                <th>MTQ</th>
+                <td>{{ mesure_homme1.MTQ }}</td>
+            </tr>
+            <tr>
+                <th>TM</th>
+                <td>{{ mesure_homme1.TM }}</td>
+            </tr>
+            <tr>
+                <th>PG</th>
+                <td>{{ mesure_homme1.PG }}</td>
+            </tr>
+            <tr>
+                <th>Cou</th>
+                <td>{{ mesure_homme1.Cou }}</td>
+            </tr>
+            <tr>
+                <th>P</th>
+                <td>{{ mesure_homme1.P }}</td>
+            </tr>
+            <tr>
+                <th>LB</th>
+                <td>{{ mesure_homme1.LB }}</td>
+            </tr>
+            <tr>
+                <th>DS</th>
+                <td>{{ mesure_homme1.DS }}</td>
+            </tr>
+            <tr>
+                <th>TQ</th>
+                <td>{{ mesure_homme1.TQ }}</td>
+            </tr>
+            <tr>
+                <th>C</th>
+                <td>{{ mesure_homme1.C }}</td>
+            </tr>
+            <tr>
+                <th>LP</th>
+                <td>{{ mesure_homme1.LP }}</td>
+            </tr>
+            <tr>
+                <th>Cu</th>
+                <td>{{ mesure_homme1.Cu }}</td>
+            </tr>
+            <tr>
+                <th>THA</th>
+                <td>{{ mesure_homme1.THA }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('mesure_homme1_index') }}">back to list</a>
+
+    <a href="{{ path('mesure_homme1_edit', {'id': mesure_homme1.id}) }}">edit</a>
+
+    {{ include('mesure_homme1/_delete_form.html.twig') }}
+{% endblock %}

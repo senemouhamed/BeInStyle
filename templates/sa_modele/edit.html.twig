@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SaModele{% endblock %}
+
+{% block body %}
+    <h1>Modifier le modéle</h1>
+
+    {{ include('sa_modele/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class="btn btn-primary"  href="{{ path('sa_modele_index') }}">Liste</a>
+
+    {{ include('sa_modele/_delete_form.html.twig') }}
+{% endblock %}

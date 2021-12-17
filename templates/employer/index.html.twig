@@ -1,0 +1,45 @@
+{% extends 'base3.html.twig' %}
+
+{% block title %}Employé{% endblock %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+         <tr><th> <h1>Employés</h1></th></tr>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Telephone</th>
+                <th>Adresse</th>
+                <th>Salaire</th>
+                <th>Avance</th>
+                <th>Reste</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employer in employers %}
+            <tr>
+                <td>{{ employer.id }}</td>
+                <td>{{ employer.Nom }}</td>
+                <td>{{ employer.Telephone }}</td>
+                <td>{{ employer.adresse }}</td>
+                <td>{{ employer.salaire |number_format}} fcfa</td>
+                <td>{{ employer.avance |number_format}} fcfa</td>
+                <td>{{ employer.reste|number_format }} fcfa</td>
+                <td>
+                    <a class="btn btn-primary" href="{{ path('employer_show', {'id': employer.id}) }}">show</a>
+                    <a class="btn btn-primary"  href="{{ path('employer_edit', {'id': employer.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        <tr><th><a class="btn btn-primary" href="{{ path('employer_new') }}">Ajouter Employer</a></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr>
+    </table>
+
+    
+{% endblock %}

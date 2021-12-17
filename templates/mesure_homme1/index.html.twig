@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MesureHomme1 index{% endblock %}
+
+{% block body %}
+    <h1>MesureHomme1 index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>E</th>
+                <th>MC</th>
+                <th>ML</th>
+                <th>MTQ</th>
+                <th>TM</th>
+                <th>PG</th>
+                <th>Cou</th>
+                <th>P</th>
+                <th>LB</th>
+                <th>DS</th>
+                <th>TQ</th>
+                <th>C</th>
+                <th>LP</th>
+                <th>Cu</th>
+                <th>THA</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mesure_homme1 in mesure_homme1s %}
+            <tr>
+                <td>{{ mesure_homme1.id }}</td>
+                <td>{{ mesure_homme1.E }}</td>
+                <td>{{ mesure_homme1.MC }}</td>
+                <td>{{ mesure_homme1.ML }}</td>
+                <td>{{ mesure_homme1.MTQ }}</td>
+                <td>{{ mesure_homme1.TM }}</td>
+                <td>{{ mesure_homme1.PG }}</td>
+                <td>{{ mesure_homme1.Cou }}</td>
+                <td>{{ mesure_homme1.P }}</td>
+                <td>{{ mesure_homme1.LB }}</td>
+                <td>{{ mesure_homme1.DS }}</td>
+                <td>{{ mesure_homme1.TQ }}</td>
+                <td>{{ mesure_homme1.C }}</td>
+                <td>{{ mesure_homme1.LP }}</td>
+                <td>{{ mesure_homme1.Cu }}</td>
+                <td>{{ mesure_homme1.THA }}</td>
+                <td>
+                    <a href="{{ path('mesure_homme1_show', {'id': mesure_homme1.id}) }}">show</a>
+                    <a href="{{ path('mesure_homme1_edit', {'id': mesure_homme1.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="17">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mesure_homme1_new') }}">Create new</a>
+{% endblock %}
